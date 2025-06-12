@@ -1,38 +1,97 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contato - EvoMark</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+  <meta charset="UTF-8">
+  <title>Serviços</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+    }
+    .container {
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+    .card {
+      border: 1px solid #ccc;
+      padding: 20px;
+      width: 300px;
+      text-align: center;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    .btn {
+      margin-top: 10px;
+      padding: 10px 20px;
+      background-color: #007bff;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+    .service-details {
+      margin-top: 40px;
+    }
+    .service-text {
+      display: none;
+    }
+    .service-text.active {
+      display: block;
+    }
+  </style>
 </head>
 <body>
-    <header>
-        <nav>
-            <ul>
-                <li><a href="/">Home</a></li>
-                <li><a href="/sobre">Sobre</a></li>
-                <li><a href="/contato">Contato</a></li>
-            </ul>
-        </nav>
-    </header>
 
-    <section class="contact">
-        <h2>Entre em Contato</h2>
-        <p>Se você tem alguma dúvida ou deseja saber mais sobre os nossos serviços, entre em contato conosco!</p>
-        <form>
-            <label for="name">Nome:</label>
-            <input type="text" id="name" name="name" required><br><br>
-            <label for="email">E-mail:</label>
-            <input type="email" id="email" name="email" required><br><br>
-            <label for="message">Mensagem:</label><br>
-            <textarea id="message" name="message" rows="4" required></textarea><br><br>
-            <input type="submit" value="Enviar">
-        </form>
-    </section>
+  <h1>Nossos Serviços</h1>
 
-    <footer>
-        <p>&copy; 2025 EvoMark. Todos os direitos reservados.</p>
-    </footer>
+  <section class="container">
+    <div class="card">
+      <img src="https://via.placeholder.com/300x180" alt="Área de Serviços">
+      <h3>Programação</h3>
+      <button class="btn" onclick="showText('programacao')">Ver mais</button>
+    </div>
+
+    <div class="card">
+      <img src="serviço-pacoteoffice.JPG" alt="Serviço Marketing que conecta">
+      <h3>Marketing</h3>
+      <button class="btn" onclick="showText('marketing')">Ver mais</button>
+    </div>
+
+    <div class="card">
+      <img src="https://via.placeholder.com/300x180" alt="Serviço pacote office">
+      <h3>Pacote Office</h3>
+      <button class="btn" onclick="showText('office')">Ver mais</button>
+    </div>
+  </section>
+
+  <section class="service-details">
+    <div id="programacao" class="service-text">
+      <h3>Programação sob medida</h3>
+      <p>Criamos, otimizamos e corrigimos sistemas, sites e aplicações com foco em performance e funcionalidades. Seja para corrigir bugs, desenvolver novas funcionalidades ou criar algo do zero, entregamos resultados com qualidade e pontualidade.</p>
+    </div>
+
+    <div id="marketing" class="service-text">
+      <h4>Marketing que conecta</h4>
+      <p>Combinamos tecnologia e estratégia para potencializar a presença digital do seu negócio. Do branding à performance, oferecemos serviços de design, redes sociais, tráfego pago e muito mais para aumentar sua visibilidade e conversão.</p>
+    </div>
+
+    <div id="office" class="service-text">
+      <h5>Pacote Office</h5>
+      <p>Auxiliamos na automação e otimização de tarefas com Excel, PowerPoint e outras ferramentas, ajudando profissionais e empresas a ganharem mais tempo e eficiência com soluções sob demanda.</p>
+    </div>
+  </section>
+
+  <script>
+    function showText(id) {
+      const textos = document.querySelectorAll('.service-text');
+      textos.forEach(t => t.classList.remove('active'));
+
+      const textoSelecionado = document.getElementById(id);
+      if (textoSelecionado) {
+        textoSelecionado.classList.add('active');
+        textoSelecionado.scrollIntoView({ behavior: "smooth" });
+      }
+    }
+  </script>
+
 </body>
 </html>
