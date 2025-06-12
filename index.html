@@ -62,41 +62,69 @@
     <a href="mailto:evomark62@gmail.com"> Mensagens</a> 
   </nav>
 
+ 
+
+  <h2>Nossos Serviços</h2>
+
   <section class="container">
     <div class="card">
-      <img src="" alt="Área de Serviços" width="300">
+      <img src="https://via.placeholder.com/300x180" alt="Área de Serviços">
       <h3>Programação</h3>
-      <p>Descrição breve do item ou post.</p>
-      <button class="btn" onclick="alert('Programação sob medida')">Ver mais</button>
+      <button class="btn" onclick="showText('programacao')">Ver mais</button>
     </div>
 
     <div class="card">
-      <img src="serviço-pacoteoffice.JPG." alt=" Serviço Marketing que conecta">
+      <img src="serviço-pacoteoffice.JPG" alt="Serviço Marketing que conecta">
       <h3>Marketing</h3>
-      <p>Outro produto ou postagem interessante.</p>
-      <button class="btn" onclick="alert('Você clicou no Marketing que conecta')">Ver mais</button>
+      <button class="btn" onclick="showText('marketing')">Ver mais</button>
     </div>
 
     <div class="card">
       <img src="https://via.placeholder.com/300x180" alt="Serviço pacote office">
-      <h3>Pacote office</h3>
-      <p>Conteúdo que pode ser post, notícia ou produto.</p>
-      <button class="btn" onclick="alert('Você clicou no Serviço pacote office')">Ver mais</button>
+      <h3>Pacote Office</h3>
+      <button class="btn" onclick="showText('office')">Ver mais</button>
     </div>
   </section>
 
+  <section class="service-details">
+    <div id="programacao" class="service-text">
+      <h3>Programação sob medida</h3>
+      <p>Criamos, otimizamos e corrigimos sistemas, sites e aplicações com foco em performance e funcionalidades. Seja para corrigir bugs, desenvolver novas funcionalidades ou criar algo do zero, entregamos resultados com qualidade e pontualidade.</p>
+    </div>
+
+    <div id="marketing" class="service-text">
+      <h4>Marketing que conecta</h4>
+      <p>Combinamos tecnologia e estratégia para potencializar a presença digital do seu negócio. Do branding à performance, oferecemos serviços de design, redes sociais, tráfego pago e muito mais para aumentar sua visibilidade e conversão.</p>
+    </div>
+
+    <div id="office" class="service-text">
+      <h5>Pacote Office</h5>
+      <p>Auxiliamos na automação e otimização de tarefas com Excel, PowerPoint e outras ferramentas, ajudando profissionais e empresas a ganharem mais tempo e eficiência com soluções sob demanda.</p>
+    </div>
+  </section>
+
+  <script>
+    function showText(id) {
+      // Oculta todos os textos
+      const textos = document.querySelectorAll('.service-text');
+      textos.forEach(t => t.classList.remove('active'));
+
+      // Exibe o texto correspondente
+      const textoSelecionado = document.getElementById(id);
+      if (textoSelecionado) {
+        textoSelecionado.classList.add('active');
+        textoSelecionado.scrollIntoView({ behavior: "smooth" });
+      }
+    }
+  </script>
+
+</body>
+</html>
+
+
     <main>
-        <h2>Evomark</h2>
+        <h1>Evomark</h1>
         <p>Na Evomark nosso propósito é claro: Resolver problemas com agilidade, inteligência e eficiência. temos uma atuação em pacote oficce, programação, marketing digital e programação. Seja você um profissional, um pequeno negócio ou uma grande empresa, estamos aqui para simplificar os desafios do dia a dia com soluções práticas, personalizadas e de alto impacto! </p>
-       
-        <h3>Programação sob medida</h3>
-        <p>Criamos, otimizamos e corrigimos sistemas, sites e aplicações com foco em performance e funcionalidades. Seja para corrigir bugs, desenvolver novas funcionalidades ou criar algo do zero, entregamos resultados com qualidade e pontualidade</p>
-
-        <h3>Marketing que conecta</h3>
-        <p>Cobinamos teclogia e estratégia para potencializar a presença digital do seu negócio. Do branding à performarce, oferecemos serviços de design, redes sociais, tráfego pago e muito mais para aumentar sua visibilidade e coversão.</p>
-
-        <h3>Pacote Oficce</h3>
-        <p>Auxiliamos na automação e otimização de tarefas com Excel, PowerPoint e outras ferramentas, ajudando profissionais e empresas a ganharem mais tempo e eficiência com soluções sob demanda.</p>
 
         <h2>Porque escolhe a Evomark?</h2>
         <p>Atendimento próximo e personalizado</p> 
